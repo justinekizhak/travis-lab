@@ -2,11 +2,12 @@ language: python
 
 python:
 
-  - "3.6"
+    - "3.6"
 
+before_install:
+    - pip install pytest pytest-cov
+    - pip install coveralls
 script:
-
-  - python hello_world.py
-
+    - python hello_world.py
 after_success:
-  - coveralls
+    - coveralls
